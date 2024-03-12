@@ -1,13 +1,17 @@
 .feedbackButton{
-    width: 15vw;
-    height: 55%;
+    width: 13vw;
+    height: 50%;
     border-radius: 12px;
     background-color: #121212;
     color: #34C94B;
     font: poppins;
     font-weight: 600;
     display: flex;
-    font-size: 80%;
+    font-size: 85%;
     justify-content: space-around;
     align-items: center;
+}
+
+.feedbackButton:hover{
+    cursor: pointer;
 }
