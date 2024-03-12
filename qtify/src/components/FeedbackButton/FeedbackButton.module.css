@@ -1,7 +1,13 @@
 .feedbackButton{
-    width: 170px;
-    height: 47px;
+    width: 15vw;
+    height: 55%;
     border-radius: 12px;
     background-color: #121212;
     color: #34C94B;
+    font: poppins;
+    font-weight: 600;
+    display: flex;
+    font-size: 80%;
+    justify-content: space-around;
+    align-items: center;
 }
