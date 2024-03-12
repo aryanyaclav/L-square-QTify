@@ -4,14 +4,11 @@
     border-radius: 12px;
     background-color: #121212;
     color: #34C94B;
-    font: poppins;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     display: flex;
     font-size: 85%;
     justify-content: space-around;
     align-items: center;
-}
-
-.feedbackButton:hover{
     cursor: pointer;
 }
