@@ -9,7 +9,7 @@ export default function Section({name}) {
 
   const fetchAlbumData = async () => {
     console.log("fetch data enter")
-        const api = "https://qtify-backend-labs.crio.do/albums/top"
+        const api = `https://qtify-backend-labs.crio.do/albums/${name}`
         try{
             const response = await axios.get(api)
             console.log(response)
@@ -31,7 +31,7 @@ export default function Section({name}) {
     <div className={styles.mainContainer}>
         <div className={styles.container}>
         <div className={styles.contentHeader}>
-            <div className={styles.albumText}>{name}</div>
+            <div className={styles.albumText}>{name==="top"? "Top Albums" : "New Albums"}</div>
             <div className={styles.buttonContainer}>Collapse</div>
 
         </div>

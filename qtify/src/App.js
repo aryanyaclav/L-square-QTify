@@ -9,7 +9,8 @@ function App() {
     <>
       <Navbar />
       <HeroSection />
-      <Section name={"Top Albums"}/>
+      <Section name={"top"}/>
+      <Section name={"new"} />
     </>
   );
 }
