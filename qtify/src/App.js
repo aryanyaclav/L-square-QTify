@@ -1,13 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/Navbar/Navbar.jsx"
 import HeroSection from './components/HeroSection/HeroSection.jsx';
+import Section from './components/Section/Section.jsx';
+
 
 function App() {
   return (
     <>
       <Navbar />
       <HeroSection />
+      <Section name={"Top Albums"}/>
     </>
   );
 }
