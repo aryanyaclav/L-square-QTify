@@ -2,46 +2,35 @@ import React , {useState, useEffect} from 'react'
 import axios from 'axios'
 import styles from "./Section.module.css"
 import Card from '../Card/Card'
+import Carousel from '../Carousel/Carousel'
+import { CircularProgress } from '@mui/material'
 
-export default function Section({name}) {
+export default function Section({name, data}) {
 
-  const [albumData, setAlbumData] = useState([])
+  const [collapsed, setCollapsed] = useState(true)
 
-  const fetchAlbumData = async () => {
-    console.log("fetch data enter")
-        const api = `https://qtify-backend-labs.crio.do/albums/${name}`
-        try{
-            const response = await axios.get(api)
-            console.log(response)
-            if(response.status === 200){
-                const data = await response.data
-                setAlbumData(data)
-                return data
-            }
-        }catch(err){
-            console.log(`errrorrr ---> ${err}`)
-        }
+  const handleCollapseClick = () => {
+    setCollapsed((prevState) => !prevState)
   }
-
-  useEffect(() => {
-    fetchAlbumData()
-  }, [])
 
   return (
     <div className={styles.mainContainer}>
         <div className={styles.container}>
         <div className={styles.contentHeader}>
             <div className={styles.albumText}>{name==="top"? "Top Albums" : "New Albums"}</div>
-            <div className={styles.buttonContainer}>Collapse</div>
+            <div className={styles.buttonContainer} onClick ={handleCollapseClick}>{collapsed ? "Show All" : "Collapse"}</div>
 
         </div>
+        {collapsed ? <div><Carousel data={data} renderComponent={(data) => <Card data={data} />}/></div> :
         <div className={styles.contentSection}>
-            {albumData.length > 0 ?
-             albumData.map( album => {
-                return (<Card data={album}/>)
-             }):
-             <></>}
+            {data.length > 0 ?
+             data.map( album => 
+                <Card data={album}/>
+             ):
+             <CircularProgress />}
         </div>
+        }
+        
     </div>
     </div>
     
