@@ -1,0 +1,10 @@
+.tab {
+    gap: 10px;
+    color: #FFFFFF;
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: 600;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected{
+    color:#FFFFFF
+}

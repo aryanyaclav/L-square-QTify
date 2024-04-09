@@ -45,3 +45,13 @@
     border-width: 0px !important;
     cursor:pointer;
 }
+
+.tabs{
+    background-color: white;
+    color: #34C94B;
+}
+
+.filterWrapper{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}

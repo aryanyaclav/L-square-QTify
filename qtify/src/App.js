@@ -4,7 +4,7 @@ import HeroSection from './components/HeroSection/HeroSection.jsx';
 import Section from './components/Section/Section.jsx';
 import { StyledEngineProvider } from '@mui/material';
 import { useState, useEffect } from 'react';
-import { fetchNewAlbums, fetchTopAlbums } from './api/api.js';
+import { fetchNewAlbums, fetchSongs, fetchTopAlbums } from './api/api.js';
 import {Outlet} from "react-router-dom"
 
 
@@ -22,15 +22,16 @@ function App() {
   useEffect(() => {
     generateData("topAlbums", fetchTopAlbums)
     generateData("newAlbums", fetchNewAlbums)
+    generateData("songs", fetchSongs)
   }, [])
 
-  const {topAlbums =[], newAlbums=[]} = data
+  const {topAlbums =[], newAlbums=[], songs = []} = data
 
   return (
     <>
       <StyledEngineProvider injectFirst>
         <Navbar />
-        <Outlet context = {{data : {topAlbums, newAlbums}}}/>
+        <Outlet context = {{data : {topAlbums, newAlbums, songs}}}/>
       </StyledEngineProvider>
 
     </>
