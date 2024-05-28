@@ -23,8 +23,6 @@ const Controls = ({data}) => {
 
 
 export default function Carousel({ data, renderComponent }) {
-    console.log("entered carousel")
-    console.log(data)
 
     return(
         <Swiper
